@@ -1,0 +1,80 @@
+<h2 class="header"><fa-icon style="background-color: #4BC0D9;" [icon]="faCar"></fa-icon> Park On!!</h2>
+<div class="reg">
+    <div class="r1">
+        <input type="radio" class="toggle-btn1" name="select" [checked]="true" (change)="onUser()">
+    </div>
+    <div class="r1">
+        <input type="radio" class="toggle-btn2" name="select" checked="false" (change)="onCompany()">
+    </div>
+    <hr>
+    <div class="user" *ngIf="isUser">
+        <h2>REGISTER</h2>
+        <div [class]="isError?'red':'green'">
+            <p>{{message}}</p>
+        </div>
+        <form #regForm="ngForm" (ngSubmit)="onRegister()">
+            <input #uname="ngModel" required pattern="^[a-zA-z ]+$" type="text" class="fields" placeholder="Full name" name="userName" [(ngModel)]="user.userName">
+            <div *ngIf="uname.errors && (uname.invalid && uname.touched)">
+                <p *ngIf="uname.errors?.['required']">Fullname required</p>
+                <p *ngIf="uname.errors?.['pattern']">Invalid Fullname</p>
+            </div>
+            <input #email="ngModel" required pattern="^[a-z0-9]+@[a-z]+\.[a-z]+.[a-z]+$" type="text" name="email" class="fields" placeholder="Email" [(ngModel)]="user.email">
+            <div *ngIf="email.errors && (email.invalid && email.touched)">
+                <p *ngIf="email.errors?.['required']">Email required</p>
+                <p *ngIf="email.errors?.['pattern']">Invalid Email</p>
+            </div>
+            <input #phone="ngModel" required pattern="^[0-9]+$" minlength="10" maxlength="10" type="string" class="fields" name="number" placeholder="Contact number eg.XXXXX7140X" [(ngModel)]="user.number">
+            <div *ngIf="phone.errors && (phone.invalid && phone.touched)">
+                <p *ngIf="phone.errors?.['required']">Phone number required</p>
+                <p *ngIf="phone.errors?.['pattern']">Invalid phone number</p>
+                <p *ngIf="phone.errors?.['minlength']">Phone number must contain 10 digits</p>
+            </div>
+            <input #pass="ngModel" required minlength="6" type="password" class="fields" name="password" placeholder="Password" [(ngModel)]="user.password">
+            <div *ngIf="pass.errors && (pass.invalid && pass.touched)">
+                <p *ngIf="pass.errors?.['required']">Password required</p>
+                <p *ngIf="pass.errors?.['minlength']">Password must be contain at least 6 characters</p>
+            </div>
+            <input type="password" #cPass="ngModel" class="fields" required name="cpass" placeholder="Confirm Password" [(ngModel)]="this.confPass">
+            <div *ngIf="cPass.errors && (cPass.invalid && cPass.touched)||pass.value!=cPass.value && cPass.touched">
+                <p>Password did not match</p>
+            </div>
+            <button routerLink="" class="btn0">Sign in instead</button>
+            <button [disabled]="regForm.invalid || pass.value!=cPass.value" class="btn">Submit</button>
+        </form>
+    </div>
+    <div class="company" *ngIf="!isUser">
+        <h2>REGISTER</h2>
+        <div [class]="isError?'red':'green'">
+            <p>{{message}}</p>
+        </div>
+        <form #regForm="ngForm" (ngSubmit)="onRegister()">
+            <input #uname="ngModel" required pattern="^[a-zA-z ]+$" type="text" class="fields" placeholder="Company name" name="userName" [(ngModel)]="company.companyName">
+            <div *ngIf="uname.errors && (uname.invalid && uname.touched)">
+                <p *ngIf="uname.errors?.['required']">Fullname required</p>
+                <p *ngIf="uname.errors?.['pattern']">Invalid Fullname</p>
+            </div>
+            <input #email="ngModel" required pattern="^[a-z0-9]+@[a-z]+\.[a-z]+.[a-z]+$" type="text" name="email" class="fields" placeholder="Email" [(ngModel)]="company.email">
+            <div *ngIf="email.errors && (email.invalid && email.touched)">
+                <p *ngIf="email.errors?.['required']">Email required</p>
+                <p *ngIf="email.errors?.['pattern']">Invalid Email</p>
+            </div>
+            <input #phone="ngModel" required pattern="^[0-9]+$" minlength="10" maxlength="10" type="string" class="fields" name="number" placeholder="Contact number eg.XXXXX7140X" [(ngModel)]="company.number">
+            <div *ngIf="phone.errors && (phone.invalid && phone.touched)">
+                <p *ngIf="phone.errors?.['required']">Phone number required</p>
+                <p *ngIf="phone.errors?.['pattern']">Invalid phone number</p>
+                <p *ngIf="phone.errors?.['minlength']">Phone number must contain 10 digits</p>
+            </div>
+            <input #pass="ngModel" required minlength="6" type="password" class="fields" name="password" placeholder="Password" [(ngModel)]="company.password">
+            <div *ngIf="pass.errors && (pass.invalid && pass.touched)">
+                <p *ngIf="pass.errors?.['required']">Password required</p>
+                <p *ngIf="pass.errors?.['minlength']">Password must be contain at least 6 characters</p>
+            </div>
+            <input type="password" #cPass="ngModel" class="fields" required name="cpass" placeholder="Confirm Password" [(ngModel)]="this.confPass">
+            <div *ngIf="cPass.errors && (cPass.invalid && cPass.touched)||pass.value!=cPass.value && cPass.touched">
+                <p>Password did not match</p>
+            </div>
+            <button routerLink="" class="btn0">Sign in instead</button>
+            <button [disabled]="regForm.invalid || pass.value!=cPass.value" class="btn">Submit</button>
+        </form>
+    </div>
+</div>

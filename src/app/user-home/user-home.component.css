@@ -1,0 +1,89 @@
+.header{
+    margin:0 50px;
+    margin-top:30px;
+    /* color: white; */
+    /* border:1px solid black; */
+    display: inline-block;
+}
+.options{
+    float:right;
+    margin:0 5%;
+    margin-top: 30px;
+    width:300px;
+    /* border: 1px solid black; */
+    display: inline;
+    font-size: 18px;
+    font-weight: 500;
+}
+.btn0{
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 10%;
+    padding:5px 20px;
+    border: none;
+    border-bottom:1px solid white;
+    cursor: pointer;
+}
+
+.btn0:hover{
+    border-bottom:3px solid white;
+}
+
+.search-box{
+    /* background-color: white; */
+    /* border:1px solid black; */
+    width:60vw;
+    height:30vh;
+    margin:5% auto;
+    text-align: center;
+    color:white;
+}
+
+.search-box p{
+    font-size: 30px;
+}
+
+.fields{
+    width:80%;
+    height: 30px;
+    margin-top:6%;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 20px;
+    line-height: 3;
+    color: white;
+}
+input[type="text"]
+{
+    font-size:20px;
+    color:white
+}
+
+.btn{
+    font-size: 15px;
+    margin-top: 5%;
+    padding:10px 20px;
+    border-radius: 100px;
+    border: 1px solid white;
+    color: white;
+    cursor:pointer;
+    transition: 0.3s ease;
+    outline: none;
+}
+
+.btn:hover{
+    background-color: white;
+    color:black;
+}
+
+.error p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    text-align:left;
+    margin-left:11%;
+    color: red;
+}

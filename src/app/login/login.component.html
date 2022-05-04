@@ -1,0 +1,31 @@
+<div class="log">
+    <div class="r1">
+        <input type="radio" class="toggle-btn1" name="select" [checked]="isUser" (change)="onUser()">
+    </div>
+    <div class="r1">
+        <input type="radio" class="toggle-btn2" name="select" [checked]="!isUser" (change)="onCompany()">
+    </div>
+    <hr>
+    <div class="login">
+        <h2>LOGIN</h2>
+        <div class="error">
+            <p>{{message}}</p>
+        </div>
+        <form #logForm="ngForm" (ngSubmit)="onLogin()">
+            <input type="text" #uname="ngModel" required class="fields" placeholder="Email" pattern="^[a-z0-9]+@[a-z]+\.[a-z]+.[a-z]+$" name="email" [(ngModel)]="loginData.email">
+            <div *ngIf="uname.errors && (uname.invalid && uname.touched)">
+                <p *ngIf="uname.errors?.['pattern']">Invalid email</p>
+                <p *ngIf="uname.errors?.['required']">Email required</p>
+            </div>
+            <input type="password" #pass="ngModel" required class="fields"
+            placeholder="Password" minlength="6" name="password" [(ngModel)]="loginData.password">
+            <div *ngIf="pass.errors && (pass.invalid && pass.touched)">
+                <p *ngIf="pass.errors?.['minlength']">Password must be atleast 6 characters</p>
+                <p *ngIf="pass.errors?.['required']">Password must be atleast 6 characters</p>
+            </div>
+            <br>
+            <button [disabled]="logForm.invalid" class="btn">LOGIN</button>
+            <button class="btn0" routerLink="/register">Create account</button>
+        </form>
+    </div>
+</div>

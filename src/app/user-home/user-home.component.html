@@ -1,0 +1,18 @@
+<div class="header">
+    <h2><fa-icon [icon]="faCar"></fa-icon> Park On!!</h2>
+</div>
+<div class="options">
+    <span>Hi {{name}}</span>
+    <button (click)="onLogout()" class="btn0">Logout</button>
+</div>
+<div class="search-box">
+    <p><fa-icon [icon]="faMag"></fa-icon> SEARCH LOCATION <fa-icon [icon]="faCar"></fa-icon></p>
+    <form #searchForm="ngForm" (ngSubmit)="onSubmit()">
+        <input class="fields" type="text" name="location" required #loc="ngModel" placeholder="Enter location" [(ngModel)]="location">
+        <div class="error" *ngIf="loc.errors && (loc.invalid && loc.touched)">
+            <p *ngIf="loc.errors?.['required']">Enter location</p>
+        </div>
+        <br>
+        <button [disabled]="searchForm.invalid" class="btn">Search</button>
+    </form>
+</div>

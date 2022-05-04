@@ -1,0 +1,135 @@
+*{
+    background-color: white;
+}
+.header{
+    background-color: #4BC0D9;
+    margin-left:50px;
+    margin-top:30px;
+    /* color: white; */
+}
+.reg{
+    margin: auto auto;
+    width:40vw;
+    height:80vh;
+    background-color: white;
+    position: relative;
+}
+.r1{
+    margin-top: 10%;
+    padding-bottom: 40px;
+    display: inline-block;
+    text-align: center;
+    width:50%;
+}
+.toggle-btn1{
+    text-align: center;
+    padding:7px;
+    -webkit-appearance: none;
+    border:1px solid black;
+    border-radius: 100px;
+    width:60%;
+    height:35px;
+    cursor: pointer;
+}
+.toggle-btn1::before{
+    content: 'USER';
+}
+.toggle-btn2{
+    text-align: center;
+    padding:7px;
+    -webkit-appearance: none;
+    border:1px solid black;
+    border-radius: 100px;
+    width:60%;
+    height:35px;
+    cursor:pointer;
+}
+.toggle-btn2::before{
+    content: 'COMPANY';
+}
+.toggle-btn1:checked{
+    background-color: black;
+    color: white;
+}
+.toggle-btn2:checked{
+    background-color: black;
+    color: white;
+}
+
+.user{
+    margin-top: 2%;
+    text-align: center;
+    width:100%;
+    height: 80%;
+    /* background-color:red; */
+    position: absolute;
+    /* display: none; */
+    transition: 0.5s ease-in;
+}
+.company{
+    margin-top: 2%;
+    text-align: center;
+    width:100%;
+    height: 80%;
+    /* background-color: blue; */
+    position: absolute;
+    /* display: none; */
+    transition: 0.5s ease;
+}
+.fields{
+    width:80%;
+    height: 30px;
+    margin-top: 3%;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+hr{
+    color: black;
+    width:80%;
+    margin:0 10%;
+}
+.btn{
+    margin-top:5% ;
+    font-size: medium;
+    width:30%;
+    padding:10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+.btn0{
+    background-color: aliceblue;
+    text-decoration: none;
+    color:black;
+    font-size: 15px;
+    margin-right: 90px;
+    width:30%;
+    padding:10px 20px;
+    border:1px solid white;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.btn0:hover{
+    background-color: rgb(173, 173, 186);
+}
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align:left;
+    margin-left:11%;
+    color: red;
+}
+.red p{
+    color:red;
+    margin-top: 5%;
+}
+
+.green p{
+    color: green;
+    margin-top: 5%;
+}

@@ -1,0 +1,21 @@
+<div class="header">
+    <span class="head"><fa-icon [icon]="faCar"></fa-icon> Park On!!</span>
+    <div class="options">
+        <span>Hi {{name}}</span>
+        <button (click)="onLogout()" class="btn0">Logout</button>
+    </div>
+</div>
+<div class="box">
+    <div class="nav">
+        <button (click)="onMyParking()" class="btn">My Parking Areas <fa-icon [icon]="faPark"></fa-icon></button>
+        <button (click)="onNewParking()" class="btn">New Parking Area <fa-icon [icon]="faLoc"></fa-icon></button>
+    </div>
+    <div class="data">
+        <div *ngIf="!btn1 && !btn2">
+            <h1>HELLO</h1>
+        </div>
+        <app-my-parking *ngIf="btn1"></app-my-parking>
+        <app-new-parking *ngIf="btn2"></app-new-parking>
+    </div>
+</div>
+
