@@ -9,7 +9,7 @@ import { faCar, faLocationPin, faParking, faPencil } from '@fortawesome/free-sol
 })
 export class CompanyHomeComponent implements OnInit {
   public faCar=faCar;
-  public btn1:boolean=false;
+  public btn1:boolean=true;
   public btn2:boolean=false;
   public faPark=faParking;
   public faLoc=faLocationPin;

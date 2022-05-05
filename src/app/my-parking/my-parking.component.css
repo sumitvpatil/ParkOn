@@ -1,0 +1,11 @@
+.header{
+    /* display: none; */
+    padding-top:2% ;
+    /* padding-bottom: 2%; */
+    width:50%;
+    margin:0 auto;
+    text-align: center;
+    font-size: 24px;
+    text-decoration: underline;
+    /* background-color: red; */
+}

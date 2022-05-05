@@ -1,1 +1,21 @@
-<h1>New Parking</h1>
+<div class="box">
+    <div class="header">
+        <span class="header">New Parking Area</span><br>
+    </div>
+    <div class="innerbox">
+        <form #addArea="ngForm" (ngSubmit)="onSubmit()">
+            <h3 class="loc">Location Details</h3>
+            <input required #pname="ngModel" type="text" class="Lfield" name="pname" placeholder="Name" [(ngModel)]="area.pName">
+            <input required #addr="ngModel" type="text" class="Rfield" name="addr" placeholder="Address" [(ngModel)]="area.pAddress">
+            <input required #city type="text" class="Lfield" name="city" placeholder="City" [(ngModel)]="area.pCity">
+            <input required type="text" #state="ngModel" class="Rfield" name="state" placeholder="State" [(ngModel)]="area.pState">
+            <input required type="text" #country="ngModel" class="Lfield" name="country" placeholder="Country" [(ngModel)]="area.pCountry">
+            <input required type="text" #lmark class="Rfield" name="lmark" placeholder="Landmarks" [(ngModel)]="area.pLmark">
+            <br><br>
+            <h3 class="loc">Slot Details</h3>
+            <input required #two="ngModel" type="number" class="Lslot" name="two" placeholder="Two Wheeler" [(ngModel)]="area.two_wheeler">
+            <input required #four="ngModel" type="number" class="Rslot" name="four" placeholder="FourWheeler" [(ngModel)]="area.four_wheeler">
+            <button [disabled]="addArea.invalid" class="btn">Done</button>
+        </form>
+    </div>
+</div>

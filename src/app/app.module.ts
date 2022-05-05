@@ -12,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { CompanyHomeComponent } from './company-home/company-home.component';
 import { MyParkingComponent } from './my-parking/my-parking.component';
-import { NewParkingComponent } from './new-parking/new-parking.component'; 
+import { NewParkingComponent } from './new-parking/new-parking.component';
+import { ElementComponent } from './element/element.component'; 
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NewParkingComponent } from './new-parking/new-parking.component';
     CompanyHomeComponent,
     MyParkingComponent,
     NewParkingComponent,
+    ElementComponent,
   ],
   imports: [
     BrowserModule,

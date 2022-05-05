@@ -1,0 +1,28 @@
+*{
+    background-color: white;
+}
+
+.box{
+    padding: 20px;
+    width:30%;
+    height:30%;
+    background-color: white;
+    margin-left:2.5%;
+    margin-top:2%;
+    border-radius:20px ;
+    display: inline-block;
+    cursor: pointer;
+}
+
+hr{
+    margin: 3% 0;
+}
+.head{
+    font-size: 95%;
+}
+.box:hover{
+    background-color: aliceblue;
+}
+.box:hover .head{
+    background-color: aliceblue;
+}

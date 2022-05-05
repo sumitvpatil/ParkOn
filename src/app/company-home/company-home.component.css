@@ -47,14 +47,15 @@
 .box{
     border: 1px solid white;
     margin:auto auto;
-    margin-top: 10vh;
+    margin-top: 4vh;
     width:90vw;
     height:80vh;
 }
 .nav{
     width:100%;
     /* background-color: red; */
-    border:1px solid white;
+    /* border:1px solid white; */
+    border-bottom:1px solid white; 
     height:30%;
     text-align: center;
 }
@@ -63,4 +64,10 @@
     float:right;
     height:70%;;
     /* background-color: blue; */
+}
+
+.welcome{
+    width:50%;
+    height: 50%;
+    background-color: white;
 }
