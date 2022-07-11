@@ -9,10 +9,17 @@
     <p><fa-icon [icon]="faMag"></fa-icon> SEARCH LOCATION <fa-icon [icon]="faCar"></fa-icon></p>
     <form #searchForm="ngForm" (ngSubmit)="onSubmit()">
         <input class="fields" type="text" name="location" required #loc="ngModel" placeholder="Enter location" [(ngModel)]="location">
-        <div class="error" *ngIf="loc.errors && (loc.invalid && loc.touched)">
-            <p *ngIf="loc.errors?.['required']">Enter location</p>
-        </div>
         <br>
         <button [disabled]="searchForm.invalid" class="btn">Search</button>
     </form>
 </div>
+<div class="res-box" [hidden]="this.search_box">
+    <p>SEARCH RESULTS</p>
+    <div *ngIf="this.no_res">
+        <p class="no-res">No nearby parking locations found!!<p>
+    </div>
+    <div *ngIf="!this.no_res">
+        <app-element1 [area]="area" *ngFor="let area of search_res"></app-element1>
+    </div>
+</div>
+<!-- <app-element1 [area]="area" *ngFor="let area of search_res"></app-element1> -->

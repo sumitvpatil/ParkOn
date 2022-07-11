@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faLocationPin } from '@fortawesome/free-solid-svg-icons';
+import { CompanyService } from '../company.service';
 import { ParkArea } from '../park-area';
 
 @Component({
@@ -9,12 +11,21 @@ import { ParkArea } from '../park-area';
 })
 export class NewParkingComponent implements OnInit {
   public faLoc=faLocationPin;
-  constructor() { }
-  public area=new ParkArea("","","","","","");
+  public companyId:any;
+  constructor(private _cs:CompanyService,private router:Router) { }
+  public area=new ParkArea("","","","","","","","0","","0","");
   ngOnInit(): void {
+    this.companyId=localStorage.getItem('companyId');
+    this.area.companyId=this.companyId;
   }
 
   onSubmit(){
-    console.log(this.area);
+    this._cs.saveArea(this.area).subscribe(response=>{
+      console.log(response);
+      window.location.reload();
+    },
+    err=>{
+      console.log(err);
+    })
   }
 }

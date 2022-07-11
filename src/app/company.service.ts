@@ -16,4 +16,12 @@ export class CompanyService {
   loginCompany(loginInfo:any){
     return this._http.post<{message:string,company:any,token:string}>(environment.baseUrlCompany+'/login',loginInfo);
   }
+
+  saveArea(area:any){
+    return this._http.post<{message:string,area:any}>(environment.baseUrlCompany+'/saveArea',area);
+  }
+
+  getArea(){
+    return this._http.get<{message:string,areaList:any}>(environment.baseUrlCompany+'/getAreabyId/'+localStorage.getItem('companyId'));
+  }
 }

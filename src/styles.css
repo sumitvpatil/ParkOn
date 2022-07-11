@@ -5,3 +5,5 @@
     background-color: #4BC0D9;
     font-family: Century Gothic;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

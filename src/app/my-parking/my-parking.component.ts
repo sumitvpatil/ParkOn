@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from '../company.service';
 
 @Component({
   selector: 'app-my-parking',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-parking.component.css']
 })
 export class MyParkingComponent implements OnInit {
-
-  constructor() { }
+  public areaList:any[]=[]
+  constructor(private _cs:CompanyService) { }
 
   ngOnInit(): void {
+    this._cs.getArea().subscribe(response=>{
+      this.areaList=response.areaList;
+      // console.log(this.areaList);
+    },err=>{
+      console.log(err);
+    })
   }
-
 }

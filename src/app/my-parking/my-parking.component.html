@@ -1,4 +1,4 @@
 <div class="header">
     <span class="header">My Parking Areas</span><br>
 </div>
-<app-element></app-element>
+<app-element [area]="area" *ngFor="let area of areaList"></app-element>

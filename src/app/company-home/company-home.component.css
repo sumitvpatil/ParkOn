@@ -1,6 +1,7 @@
 .header{
     margin-left:50px;
     margin-top:30px;
+    background-color: ;
     /* color: white; */
 }
 .head{
@@ -37,7 +38,7 @@
     padding:5px 20px;
     border: none;
     border-bottom:1px solid white;
-    margin-top:5%;
+    margin-top:3%;
     cursor: pointer;
 }
 
@@ -45,25 +46,24 @@
     border-bottom:3px solid white;
 }
 .box{
-    border: 1px solid white;
+    /* border: 1px solid white; */
     margin:auto auto;
     margin-top: 4vh;
     width:90vw;
-    height:80vh;
 }
 .nav{
     width:100%;
     /* background-color: red; */
-    /* border:1px solid white; */
-    border-bottom:1px solid white; 
-    height:30%;
+    border:2px solid white;
+    height:20vh;
     text-align: center;
 }
 .data{
     width:100%;
     float:right;
-    height:70%;;
+    height:70%;
     /* background-color: blue; */
+    border: 1px solid white;
 }
 
 .welcome{

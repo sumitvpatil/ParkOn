@@ -1,0 +1,63 @@
+.box{
+    width:80%;
+    height:10vh;
+    margin: 15px auto;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 0;
+    transition: 0.3s ease;
+    margin-bottom: 0;
+    border-bottom: 1px solid black;
+}
+
+span{
+    /* display: inline-block; */
+    width:40%;
+    margin-left: 20px;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+}
+
+.btn{
+    float: right;
+    margin-right: 20px;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+
+.modal{
+    padding: 10px;
+    display: none;
+    width:80%;
+    margin:0 auto;
+    height:100px;
+    background-color: white;
+}
+
+.display-none{
+    height:0;
+    transition: height 0.3s ease;
+}
+
+.display-full{
+    display: block;
+    height:150px;
+    transition: height 0.3s ease;
+}
+
+.details{
+    margin: 20px;
+}
+
+.green{
+    color: rgb(90, 230, 90);;
+}

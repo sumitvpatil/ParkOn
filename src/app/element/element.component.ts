@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-element',
@@ -6,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./element.component.css']
 })
 export class ElementComponent implements OnInit {
-
-  constructor() { }
+  @Input() public area:any;
+  constructor(public _router:Router) { }
 
   ngOnInit(): void {
   }
 
   onClick(){
-    console.log("HELLO");
+    this._router.navigate(["parking-area"]);
   }
 }

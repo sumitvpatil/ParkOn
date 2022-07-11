@@ -13,7 +13,12 @@ import { UserHomeComponent } from './user-home/user-home.component';
 import { CompanyHomeComponent } from './company-home/company-home.component';
 import { MyParkingComponent } from './my-parking/my-parking.component';
 import { NewParkingComponent } from './new-parking/new-parking.component';
-import { ElementComponent } from './element/element.component'; 
+import { ElementComponent } from './element/element.component';
+import { ParkingAreaComponent } from './parking-area/parking-area.component'; 
+
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Element1Component } from './element1/element1.component'; 
 
 @NgModule({
   declarations: [
@@ -27,13 +32,16 @@ import { ElementComponent } from './element/element.component';
     MyParkingComponent,
     NewParkingComponent,
     ElementComponent,
+    ParkingAreaComponent,
+    Element1Component,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

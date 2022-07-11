@@ -8,7 +8,8 @@
     height:30%;
     background-color: white;
     margin-left:2.5%;
-    margin-top:2%;
+    margin-top:1%;
+    margin-bottom: 1%;
     border-radius:20px ;
     display: inline-block;
     cursor: pointer;
@@ -18,11 +19,13 @@ hr{
     margin: 3% 0;
 }
 .head{
-    font-size: 95%;
+    font-size: 105%;
 }
 .box:hover{
-    background-color: aliceblue;
+    background-color: rgb(218, 238, 255);
+    transition: 0.3s ease;
 }
 .box:hover .head{
-    background-color: aliceblue;
+    background-color: rgb(218, 238, 255);
+    transition: 0.3s ease;
 }

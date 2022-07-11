@@ -5,8 +5,11 @@ export class ParkArea {
         public pCity:string,
         public pState:string,
         public pCountry:string,
-        public pLmark:string,
-        public two_wheeler:any="",
-        public four_wheeler:any=""
+        public pNumber:string,
+        public two_wheeler_total:string,
+        public two_wheeler_taken:string,
+        public four_wheeler_total:string,
+        public four_wheeler_taken:string,
+        public companyId:string
     ){}
 }

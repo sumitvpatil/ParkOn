@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faCar, faMagnifyingGlass, faSquareParking } from '@fortawesome/free-solid-svg-icons';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-home',
@@ -13,14 +14,26 @@ export class UserHomeComponent implements OnInit {
   public faMag=faMagnifyingGlass;
   public location:string="";
   public name:any="User";
-  constructor(private _router:Router) { }
+  public search_res:any[]=[]
+  public search_box:boolean=true;
+  public no_res:boolean=true;
+  constructor(private _router:Router,private _us:UserService) { }
 
   ngOnInit(): void {
     this.name=localStorage.getItem('userName');
   }
 
   onSubmit(){
-    console.log(this.location);
+    this.search_box=false;
+    this._us.searchArea(this.location).subscribe(response=>{
+      this.no_res=false;
+      this.search_res=response.search_res;
+      console.log(this.search_res);
+    },
+    err=>{
+      this.no_res=true;
+      console.log(err);
+    })
   }
 
   onLogout(){
