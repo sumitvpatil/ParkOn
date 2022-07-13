@@ -3,11 +3,13 @@
     <button (click)="onClick()" class="btn">More Details</button>
 </div>
 <div class="modal" [class]="!this.show?'display-full':'display-none'">
-    <span class="details">Address : {{area.pAddress}}</span>
-    <span class="details">Contact Details : {{area.pNumber}}</span>
-    <br><br>
-    <span>SLOTS:</span>
-    <br><br>
-    <span class="details">Two Wheeler : <span class="green">{{area.two_wheeler_total-area.two_wheeler_taken}}</span></span>
-    <span class="details">Four Wheeler : <span class="green">{{area.four_wheeler_total-area.four_wheeler_taken}}</span></span>
+    <div class="inner-modal" *ngIf="!this.show">
+        <span class="details">Address : {{area.pAddress}}</span>
+        <span class="details">Contact Details : {{area.pNumber}}</span>
+        <br><br>
+        <span>AVAILABLE SLOTS:</span>
+        <br><br>
+        <span class="details">Two Wheeler : <span class="green">{{area.two_wheeler_total-area.two_wheeler_taken}}</span></span>
+        <span class="details">Four Wheeler : <span class="green">{{area.four_wheeler_total-area.four_wheeler_taken}}</span></span>
+    </div>
 </div>

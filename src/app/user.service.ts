@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class UserService {
 
   constructor(private _http:HttpClient) { }
-
+  public token:any;
   registerUser(user:any){
     return this._http.post<{message:string,user:any}>(environment.baseUrlUser+'/register',user);
   }
@@ -18,6 +18,9 @@ export class UserService {
   }
 
   searchArea(key:any){
-    return this._http.get<{message:string,search_res:any}>(environment.baseUrlUser+'/searchArea/'+key);
+    this.token=localStorage.getItem('token');
+    return this._http.get<{message:string,search_res:any}>(environment.baseUrlUser+'/searchArea/'+key,{
+      headers:new HttpHeaders().set('x-token',this.token)
+    });
   }
 }

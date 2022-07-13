@@ -3,11 +3,12 @@
     height:10vh;
     margin: 15px auto;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 20px 0;
     transition: 0.3s ease;
     margin-bottom: 0;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
+    transition: 0.3s ease;
 }
 
 span{
@@ -35,23 +36,29 @@ span{
 }
 
 .modal{
-    padding: 10px;
-    display: none;
+    padding-top: 10px;
     width:80%;
     margin:0 auto;
-    height:100px;
     background-color: white;
+    transition: 0.3s ease;
+}
+
+.inner-modal{
+    width:100%;
+    margin:0 auto;
+    background-color: white;
+    transition: 0.3s ease;
 }
 
 .display-none{
     height:0;
-    transition: height 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .display-full{
-    display: block;
+    /* display: block; */
     height:150px;
-    transition: height 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .details{
