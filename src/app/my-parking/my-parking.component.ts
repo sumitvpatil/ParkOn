@@ -7,13 +7,11 @@ import { CompanyService } from '../company.service';
   styleUrls: ['./my-parking.component.css']
 })
 export class MyParkingComponent implements OnInit {
-  public areaList:any[]=[]
-  constructor(private _cs:CompanyService) { }
+  constructor(public _cs:CompanyService) { }
 
   ngOnInit(): void {
     this._cs.getArea().subscribe(response=>{
-      this.areaList=response.areaList;
-      // console.log(this.areaList);
+      this._cs.areaList=response.areaList;
     },err=>{
       console.log(err);
     })

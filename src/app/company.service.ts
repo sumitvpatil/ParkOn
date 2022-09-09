@@ -7,6 +7,9 @@ import { environment } from 'src/environments/environment';
 })
 export class CompanyService {
   public token:any;
+  public areaList:any[]=[]
+  public btn1:boolean=true;
+  public btn2:boolean=false;
   constructor(private _http:HttpClient) { }
 
   registerCompany(company:any){
@@ -35,6 +38,6 @@ export class CompanyService {
 
   deleteArea(area:any){
     this.token=localStorage.getItem('token');
-    return this._http.delete<{message:String,deletedArea:any}>(environment.baseUrlCompany+'/deleteArea/'+area._id);
+    return this._http.delete<{message:String,deletedArea:any}>(environment.baseUrlCompany+'/deleteArea/'+area._id,{headers:new HttpHeaders().set('x-token',this.token)});
   }
 }

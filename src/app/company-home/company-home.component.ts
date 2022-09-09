@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faCar, faLocationPin, faParking, faPencil } from '@fortawesome/free-solid-svg-icons';
+import { CompanyService } from '../company.service';
 
 @Component({
   selector: 'app-company-home',
@@ -9,12 +10,10 @@ import { faCar, faLocationPin, faParking, faPencil } from '@fortawesome/free-sol
 })
 export class CompanyHomeComponent implements OnInit {
   public faCar=faCar;
-  public btn1:boolean=true;
-  public btn2:boolean=false;
   public faPark=faParking;
   public faLoc=faLocationPin;
   public faLayer=faPencil;
-  constructor(private _router:Router) { }
+  constructor(private _router:Router,public _cs:CompanyService) { }
   public name:any="Company"
 
   ngOnInit(): void {
@@ -29,12 +28,12 @@ export class CompanyHomeComponent implements OnInit {
   }
 
   onMyParking(){
-    this.btn1=true;
-    this.btn2=false;
+    this._cs.btn1=true;
+    this._cs.btn2=false;
   }
 
   onNewParking(){
-    this.btn1=false;
-    this.btn2=true;
+    this._cs.btn1=false;
+    this._cs.btn2=true;
   }
 }

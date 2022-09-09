@@ -11,8 +11,8 @@
         <button (click)="onNewParking()" class="btn">New Parking Area <fa-icon [icon]="faLoc"></fa-icon></button>
     </div>
     <div class="data">
-        <app-my-parking *ngIf="btn1"></app-my-parking>
-        <app-new-parking *ngIf="btn2"></app-new-parking>
+        <app-my-parking *ngIf="this._cs.btn1"></app-my-parking>
+        <app-new-parking *ngIf="this._cs.btn2"></app-new-parking>
     </div>
 </div>
 

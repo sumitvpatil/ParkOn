@@ -22,7 +22,9 @@ export class NewParkingComponent implements OnInit {
   onSubmit(){
     this._cs.saveArea(this.area).subscribe(response=>{
       console.log(response);
-      window.location.reload();
+      this._cs.areaList.push(this.area);
+      this._cs.btn1=true;
+      this._cs.btn2=false;
     },
     err=>{
       console.log(err);

@@ -11,7 +11,7 @@ import { ParkArea } from '../park-area';
   styleUrls: ['./parking-area.component.css']
 })
 export class ParkingAreaComponent implements OnInit {
-  public area=new ParkArea("","","","","","","","0","","0","");
+  public area:any;
   faCar=faCar;
   public name:any="Company"
   constructor(private _router:Router,public _as:AreaService,private _cs:CompanyService) { }
@@ -19,7 +19,6 @@ export class ParkingAreaComponent implements OnInit {
   ngOnInit(): void {
     this.name=localStorage.getItem('companyName');
     this.area=this._as.area;
-    console.log(this.area);
   }
 
   onLogout(){
@@ -31,22 +30,35 @@ export class ParkingAreaComponent implements OnInit {
   onSave(){
     this._cs.updateArea(this.area).subscribe(response=>{
       console.log(response);
+      for(var i=0;i<this._cs.areaList.length;i++){
+        if(this._cs.areaList[i]._id==this.area._id){
+          this._cs.areaList[i]=this.area;
+          break;
+        }
+      }
     },err=>{
       console.log(err);
     })
-    this._router.navigate(['/companyHome']).then(()=>{
-      window.location.reload();
-    });
+    this._router.navigate(['/companyHome']);
   }
   
   onDelete(){
+    var pos=-1;
+    for(var i=0;i<this._cs.areaList.length;i++){
+      if(this._cs.areaList[i]._id==this.area._id){
+        pos=i;
+        break;
+      }
+    }
+    if(pos!=-1){
+      this._cs.areaList.splice(pos,1);
+    }
     this._cs.deleteArea(this.area).subscribe(response=>{
       console.log(response);
+      console.log(this._cs.areaList);
     },err=>{
       console.log(err);
     })
-    this._router.navigate(['/companyHome']).then(()=>{
-      window.location.reload();
-    });
+    this._router.navigate(['/companyHome']);
   }
 }
