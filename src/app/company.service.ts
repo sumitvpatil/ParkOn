@@ -14,7 +14,8 @@ export class CompanyService {
   }
 
   loginCompany(loginInfo:any){
-    return this._http.post<{message:string,company:any,token:string}>(environment.baseUrlCompany+'/login',loginInfo,{headers:new HttpHeaders().set('x-token',this.token)});
+    console.log("HELLO");
+    return this._http.post<{message:string,company:any,token:string}>(environment.baseUrlCompany+'/login',loginInfo);
   }
 
   saveArea(area:any){

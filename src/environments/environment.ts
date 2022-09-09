@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrlUser:"http://localhost:3000/user",
-  baseUrlCompany:"http://localhost:3000/company"
+  baseUrlUser:"https://parkon-server.herokuapp.com/user",
+  baseUrlCompany:"https://parkon-server.herokuapp.com/company"
 };
 
 /*
