@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrlUser:"https://parkon-server.herokuapp.com/user",
+  baseUrlCompany:"https://parkon-server.herokuapp.com/company"
 };

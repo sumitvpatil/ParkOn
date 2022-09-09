@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
+  // baseUrlUser:"http://localhost:3000/user",
+  // baseUrlCompany:"http://localhost:3000/company"
   baseUrlUser:"https://parkon-server.herokuapp.com/user",
   baseUrlCompany:"https://parkon-server.herokuapp.com/company"
 };
