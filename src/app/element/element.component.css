@@ -29,3 +29,18 @@ hr{
     background-color: rgb(218, 238, 255);
     transition: 0.3s ease;
 }
+
+@media(max-width:500px){
+    .box{
+        padding: 20px;
+        width:45%;
+        height:30%;
+        background-color: white;
+        margin-left:2.5%;
+        margin-top:1%;
+        margin-bottom: 1%;
+        border-radius:20px ;
+        display: inline-block;
+        cursor: pointer;
+    }
+}

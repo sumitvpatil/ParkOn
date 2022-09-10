@@ -39,6 +39,7 @@ span{
     padding-top: 10px;
     width:80%;
     margin:0 auto;
+    margin-bottom: 8%;
     background-color: white;
     transition: 0.3s ease;
 }
@@ -67,4 +68,35 @@ span{
 
 .green{
     color: rgb(90, 230, 90);;
+}
+
+@media(max-width:500px){
+    .box{
+        width:90%;
+        height:10vh;
+        margin: 15px auto;
+        background-color: white;
+        padding: 20px 0;
+        transition: 0.3s ease;
+        margin-bottom: 0;
+        /* border-bottom: 1px solid black; */
+        transition: 0.3s ease;
+    }
+    .modal{
+        padding-top: 10px;
+        width:90%;
+        margin:0 auto;
+        margin-bottom: 30%;;
+        background-color: white;
+        transition: 0.3s ease;
+    }
+    
+    .inner-modal{
+        text-align: left;
+        width:100%;
+        margin:0 0;
+        margin-bottom: 5%;
+        background-color: white;
+        transition: 0.3s ease;
+    }
 }

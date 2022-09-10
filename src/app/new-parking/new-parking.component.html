@@ -10,11 +10,12 @@
             <input required #city type="text" class="Lfield" name="city" placeholder="City" [(ngModel)]="area.pCity">
             <input required type="text" #state="ngModel" class="Rfield" name="state" placeholder="State" [(ngModel)]="area.pState">
             <input required type="text" #country="ngModel" class="Lfield" name="country" placeholder="Country" [(ngModel)]="area.pCountry">
-            <input required type="text" #lmark class="Rfield" name="lmark" placeholder="Contact Number" [(ngModel)]="area.pNumber">
+            <input required type="text" #lmark class="Rfield" name="lmark" placeholder="Contact No" [(ngModel)]="area.pNumber">
             <br><br>
             <h3 class="loc">Slot Details</h3>
             <input required #two="ngModel" type="text" class="Lslot" name="two" placeholder="Two Wheeler" [(ngModel)]="area.two_wheeler_total">
             <input required #four="ngModel" type="text" class="Rslot" name="four" placeholder="FourWheeler" [(ngModel)]="area.four_wheeler_total">
+            <br>
             <a routerLink="/companyHome"><button [disabled]="addArea.invalid" class="btn" (click)="onSubmit()">Done</button></a>
         </form>
     </div>
