@@ -1,7 +1,6 @@
 .header{
     margin-left:50px;
     margin-top:30px;
-    background-color: ;
     /* color: white; */
 }
 .head{
@@ -71,4 +70,37 @@
     width:50%;
     height: 50%;
     background-color: white;
+}
+
+@media(max-width:500px){
+    .header{
+        margin-left:30px;
+        margin-top:5px;
+        margin-right:20px;
+        padding-top: 30px;
+        width:90%;
+        /* color: white; */
+        /* border:1px solid black; */
+        display: inline block;
+    }
+    .options{
+        float:none;
+        margin:0 0;
+        /* margin-top: 20px; */
+        margin-left:7%;
+        width:50px;
+        /* border: 1px solid black; */
+        display: inline;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .btn0{
+        font-weight: 500;
+        font-size: 18px;
+        margin-left: 3%;
+        padding:5px 20px;
+        border: none;
+        border-bottom:1px solid white;
+        cursor: pointer;
+    }
 }

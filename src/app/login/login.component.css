@@ -117,3 +117,12 @@ p{
 .error p{
     margin-top:5%;
 }
+
+@media(max-width:500px){
+    .log{
+        border-radius: 30px;
+        margin: 0 10%;
+        width: 80%;
+        height:100%;
+    }
+}
