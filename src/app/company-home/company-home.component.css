@@ -87,7 +87,7 @@
         float:none;
         margin:0 0;
         /* margin-top: 20px; */
-        margin-left:7%;
+        margin-left:1%;
         width:50px;
         /* border: 1px solid black; */
         display: inline;
@@ -97,7 +97,7 @@
     .btn0{
         font-weight: 500;
         font-size: 18px;
-        margin-left: 3%;
+        margin-left: 1%;
         padding:5px 20px;
         border: none;
         border-bottom:1px solid white;
