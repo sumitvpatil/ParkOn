@@ -9,18 +9,17 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public isUser:boolean=true;
   public loginData=new LogModel("","");
   public msg1:string="1";
   public msg2:string="2";
   public message:string="";
-  constructor(private _us:UserService,private _cs:CompanyService,private router:Router) { }
+  constructor(private _us:UserService,public _cs:CompanyService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
   onLogin(){
-    if(this.isUser==true){
+    if(this._cs.isUser==true){
       this._us.loginUser(this.loginData).subscribe(response=>{
         console.log(response);
         this.message=response.message;
@@ -49,11 +48,11 @@ export class LoginComponent implements OnInit {
 }
 
   onUser(){
-    this.isUser=!this.isUser;
+    this._cs.isUser=!this._cs.isUser;
   }
 
   onCompany(){
-    this.isUser=!this.isUser;
+    this._cs.isUser=!this._cs.isUser;
   }
 
 }

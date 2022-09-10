@@ -1,13 +1,16 @@
+<div *ngIf="this._ls.isLoading|async" class="loader-container">
+    <mat-progress-bar class="bar" mode="indeterminate"></mat-progress-bar>
+</div>
 <h2 class="header"><fa-icon style="background-color: #4BC0D9;" [icon]="faCar"></fa-icon> Park On!!</h2>
 <div class="reg">
     <div class="r1">
-        <input type="radio" class="toggle-btn1" name="select" [checked]="true" (change)="onUser()">
+        <input type="radio" class="toggle-btn1" name="select" [checked]="this._cs.isUser" (change)="onUser()">
     </div>
     <div class="r1">
-        <input type="radio" class="toggle-btn2" name="select" checked="false" (change)="onCompany()">
+        <input type="radio" class="toggle-btn2" name="select" [checked]="!this._cs.isUser" (change)="onCompany()">
     </div>
     <hr>
-    <div class="user" *ngIf="isUser">
+    <div class="user" *ngIf="this._cs.isUser">
         <h2>REGISTER</h2>
         <div [class]="isError?'red':'green'">
             <p>{{message}}</p>
@@ -42,7 +45,7 @@
             <button [disabled]="regForm.invalid || pass.value!=cPass.value" class="btn">Submit</button>
         </form>
     </div>
-    <div class="company" *ngIf="!isUser">
+    <div class="company" *ngIf="!this._cs.isUser">
         <h2>REGISTER</h2>
         <div [class]="isError?'red':'green'">
             <p>{{message}}</p>

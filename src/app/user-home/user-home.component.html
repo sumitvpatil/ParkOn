@@ -1,3 +1,6 @@
+<div *ngIf="this._ls.isLoading|async" class="loader-container">
+    <mat-progress-bar class="bar" mode="indeterminate"></mat-progress-bar>
+</div>
 <div class="header">
     <h2><fa-icon [icon]="faCar"></fa-icon> Park On!!</h2>
 </div>

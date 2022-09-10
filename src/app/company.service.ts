@@ -10,6 +10,7 @@ export class CompanyService {
   public areaList:any[]=[]
   public btn1:boolean=true;
   public btn2:boolean=false;
+  public isUser:boolean=true;
   constructor(private _http:HttpClient) { }
 
   registerCompany(company:any){

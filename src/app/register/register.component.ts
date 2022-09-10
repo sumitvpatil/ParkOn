@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCar } from '@fortawesome/free-solid-svg-icons';
 import { CompanyService } from '../company.service';
+import { LoaderService } from '../loader/loader.service';
 import { RegModelCompany } from '../reg-model-company';
 import { RegModelUser } from '../reg-model-user';
 import { UserService } from '../user.service';
@@ -13,26 +14,25 @@ import { UserService } from '../user.service';
 export class RegisterComponent implements OnInit {
   faCar=faCar;
   public confPass:string="";
-  public isUser:boolean=true;
   public user=new RegModelUser("","","","");
   public company=new RegModelCompany("","","","");
   public message:string="";
   public isError:boolean=false;
-  constructor(private _us:UserService,private _cs:CompanyService) { }
+  constructor(private _us:UserService,public _cs:CompanyService,public _ls:LoaderService) { }
 
   ngOnInit(): void {
   }
   onUser(){
     // console.log(1);
-    this.isUser=!this.isUser;
+    this._cs.isUser=!this._cs.isUser;
   }
   onCompany(){
     // console.log(2);
-    this.isUser=!this.isUser;
+    this._cs.isUser=!this._cs.isUser;
   }
 
   onRegister(){
-    if(this.isUser){
+    if(this._cs.isUser){
       this._us.registerUser(this.user).subscribe(response=>{
         this.isError=false;
         console.log(response);

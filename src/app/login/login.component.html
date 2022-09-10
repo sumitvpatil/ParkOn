@@ -1,9 +1,9 @@
 <div class="log">
     <div class="r1">
-        <input type="radio" class="toggle-btn1" name="select" [checked]="isUser" (change)="onUser()">
+        <input type="radio" class="toggle-btn1" name="select" [checked]="this._cs.isUser" (change)="onUser()">
     </div>
     <div class="r1">
-        <input type="radio" class="toggle-btn2" name="select" [checked]="!isUser" (change)="onCompany()">
+        <input type="radio" class="toggle-btn2" name="select" [checked]="!this._cs.isUser" (change)="onCompany()">
     </div>
     <hr>
     <div class="login">

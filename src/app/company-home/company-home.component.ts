@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faCar, faLocationPin, faParking, faPencil } from '@fortawesome/free-solid-svg-icons';
 import { CompanyService } from '../company.service';
+import { LoaderService } from '../loader/loader.service';
 
 @Component({
   selector: 'app-company-home',
@@ -13,7 +14,7 @@ export class CompanyHomeComponent implements OnInit {
   public faPark=faParking;
   public faLoc=faLocationPin;
   public faLayer=faPencil;
-  constructor(private _router:Router,public _cs:CompanyService) { }
+  constructor(private _router:Router,public _cs:CompanyService, public _ls:LoaderService) { }
   public name:any="Company"
 
   ngOnInit(): void {

@@ -8,7 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserHomeComponent } from './user-home/user-home.component';
 import { CompanyHomeComponent } from './company-home/company-home.component';
 import { MyParkingComponent } from './my-parking/my-parking.component';
@@ -19,6 +19,7 @@ import { ParkingAreaComponent } from './parking-area/parking-area.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Element1Component } from './element1/element1.component'; 
+import { InterceptorService } from './loader/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -42,8 +43,11 @@ import { Element1Component } from './element1/element1.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatProgressBarModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

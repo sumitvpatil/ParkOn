@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { faCar } from '@fortawesome/free-solid-svg-icons';
 import { AreaService } from '../area.service';
 import { CompanyService } from '../company.service';
+import { LoaderService } from '../loader/loader.service';
 import { ParkArea } from '../park-area';
 
 @Component({
@@ -14,7 +15,7 @@ export class ParkingAreaComponent implements OnInit {
   public area:any;
   faCar=faCar;
   public name:any="Company"
-  constructor(private _router:Router,public _as:AreaService,private _cs:CompanyService) { }
+  constructor(private _router:Router,public _as:AreaService,private _cs:CompanyService, public _ls:LoaderService) { }
 
   ngOnInit(): void {
     this.name=localStorage.getItem('companyName');
@@ -36,29 +37,32 @@ export class ParkingAreaComponent implements OnInit {
           break;
         }
       }
+      this.locationUpdate();
     },err=>{
       console.log(err);
     })
-    this._router.navigate(['/companyHome']);
   }
   
   onDelete(){
-    var pos=-1;
-    for(var i=0;i<this._cs.areaList.length;i++){
-      if(this._cs.areaList[i]._id==this.area._id){
-        pos=i;
-        break;
-      }
-    }
-    if(pos!=-1){
-      this._cs.areaList.splice(pos,1);
-    }
     this._cs.deleteArea(this.area).subscribe(response=>{
       console.log(response);
-      console.log(this._cs.areaList);
+      var pos=-1;
+      for(var i=0;i<this._cs.areaList.length;i++){
+        if(this._cs.areaList[i]._id==this.area._id){
+          pos=i;
+          break;
+        }
+      }
+      if(pos!=-1){
+        this._cs.areaList.splice(pos,1);
+      }
+      this.locationUpdate();
     },err=>{
       console.log(err);
     })
+  }
+
+  locationUpdate(){
     this._router.navigate(['/companyHome']);
   }
 }
