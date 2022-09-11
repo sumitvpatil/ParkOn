@@ -1,20 +1,18 @@
 .box{
     width:80%;
-    height:10vh;
-    margin: 15px auto;
+    min-height:10vh;
     background-color: white;
-    border-radius: 2px;
-    padding: 20px 0;
-    transition: 0.3s ease;
-    margin-bottom: 0;
-    /* border-bottom: 1px solid black; */
-    transition: 0.3s ease;
+    border-radius: 20px;
+    padding-top: 3%;
+    transition: 0.5s ease;
+    margin: 0 auto;
+    margin-bottom: 1%;
 }
 
 span{
     /* display: inline-block; */
     width:40%;
-    margin-left: 20px;
+    margin:0 20px;
     font-size: 20px;
     background-color: white;
     color: black;
@@ -35,33 +33,6 @@ span{
     color: white;
 }
 
-.modal{
-    padding-top: 10px;
-    width:80%;
-    margin:0 auto;
-    margin-bottom: 8%;
-    background-color: white;
-    transition: 0.3s ease;
-}
-
-.inner-modal{
-    width:100%;
-    margin:0 auto;
-    background-color: white;
-    transition: 0.3s ease;
-}
-
-.display-none{
-    height:0;
-    transition: 0.3s ease;
-}
-
-.display-full{
-    /* display: block; */
-    height:150px;
-    transition: 0.3s ease;
-}
-
 .details{
     margin: 20px;
 }
@@ -69,34 +40,90 @@ span{
 .green{
     color: rgb(90, 230, 90);;
 }
+.box1{
+    height:0;
+    overflow: hidden;
+    margin-top: 1%;
+    width:100%;
+    background-color: white;
+    /* padding: 3% 2%; */
+    border-radius:20px;
+    transition: 0.3s ease-in;
+    z-index: -1;
+}
+
+.display-full{
+    height:30vh;
+    transition: 0.3s ease-in;
+}
+
+.main-head{
+    font-weight: bold;
+}
 
 @media(max-width:500px){
     .box{
-        width:90%;
-        height:10vh;
-        margin: 15px auto;
+        text-align: left;
+        width:85%;
+        min-height:10vh;
         background-color: white;
-        padding: 20px 0;
-        transition: 0.3s ease;
-        margin-bottom: 0;
-        /* border-bottom: 1px solid black; */
-        transition: 0.3s ease;
-    }
-    .modal{
-        padding-top: 10px;
-        width:90%;
-        margin:0 auto;
-        margin-bottom: 30%;;
-        background-color: white;
-        transition: 0.3s ease;
+        border-radius: 20px;
+        padding-top: 3%;
+        transition: 0.5s ease;
+        margin: 0 auto;
+        margin-bottom: 1%;
     }
     
-    .inner-modal{
-        text-align: left;
-        width:100%;
-        margin:0 0;
-        margin-bottom: 5%;
+    span{
+        /* display: inline-block; */
+        width:25%;
+        margin:0 10px;
+        font-size: 16px;
         background-color: white;
-        transition: 0.3s ease;
+        color: black;
+    }
+    
+    .btn{
+        float: right;
+        margin-right: 20px;
+        background-color: white;
+        padding: 5px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s ease-in;
+    }
+    
+    .btn:hover{
+        background-color: black;
+        color: white;
+    }
+    
+    .details{
+        margin: 20px;
+    }
+    
+    .green{
+        color: rgb(90, 230, 90);;
+    }
+    .box1{
+        height:0;
+        overflow: hidden;
+        margin-top: 1%;
+        width:100%;
+        background-color: white;
+        /* padding: 3% 2%; */
+        border-radius:20px;
+        transition: 0.3s ease-in;
+        z-index: -1;
+    }
+    
+    .display-full{
+        height:35vh;
+        transition: 0.3s ease-in;
+    }
+    
+    .main-head{
+        font-size: 16px;
+        font-weight: bold;
     }
 }

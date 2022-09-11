@@ -1,16 +1,14 @@
 <div class="box">
-    <span>{{area.pName}}</span>
+    <span class="main-head">{{area.pName}}</span>
     <button (click)="onClick()" class="btn">More Details</button>
-</div>
-<div class="modal" [class]="!this.show?'display-full':'display-none'">
-    <div class="inner-modal" *ngIf="!this.show">
-        <span class="details">Address : {{area.pAddress}}</span><br><br>
-        <span class="details">Contact Details : {{area.pNumber}}</span>
+    <div class="box1" [class.display-full]="!this.show">
+        <span class="details">Address: {{area.pAddress}}</span><br><br>
+        <span class="details">Contact No: {{area.pNumber}}</span>
         <br><br>
         <span>AVAILABLE SLOTS:</span>
         <br><br>
-        <span class="details">Two Wheeler : <span class="green">{{area.two_wheeler_total-area.two_wheeler_taken}}</span></span><br><br>
-        <span class="details">Four Wheeler : <span class="green">{{area.four_wheeler_total-area.four_wheeler_taken}}</span></span>
+        <span class="details">Two Wheeler: <span class="green">{{area.two_wheeler_total-area.two_wheeler_taken}}</span></span><br><br>
+        <span class="details">Four Wheeler: <span class="green">{{area.four_wheeler_total-area.four_wheeler_taken}}</span></span>
         <br><br>
     </div>
 </div>

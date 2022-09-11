@@ -16,12 +16,12 @@
             <p>{{message}}</p>
         </div>
         <form #regForm="ngForm" (ngSubmit)="onRegister()">
-            <input #uname="ngModel" required pattern="^[a-zA-z ]+$" type="text" class="fields" placeholder="Full name" name="userName" [(ngModel)]="user.userName">
+            <input autocomplete="off" #uname="ngModel" required pattern="^[a-zA-z ]+$" type="text" class="fields" placeholder="Full name" name="userName" [(ngModel)]="user.userName">
             <div *ngIf="uname.errors && (uname.invalid && uname.touched)">
                 <p *ngIf="uname.errors?.['required']">Fullname required</p>
                 <p *ngIf="uname.errors?.['pattern']">Invalid Fullname</p>
             </div>
-            <input #email="ngModel" required pattern="^[a-z0-9.]+@[a-z]+\.[a-z]+.[a-z]+$" type="text" name="email" class="fields" placeholder="Email" [(ngModel)]="user.email">
+            <input autocomplete="off" #email="ngModel" required pattern="^[a-z0-9.]+@[a-z]+\.[a-z]+.[a-z]+$" type="text" name="email" class="fields" placeholder="Email" [(ngModel)]="user.email">
             <div *ngIf="email.errors && (email.invalid && email.touched)">
                 <p *ngIf="email.errors?.['required']">Email required</p>
                 <p *ngIf="email.errors?.['pattern']">Invalid Email</p>
