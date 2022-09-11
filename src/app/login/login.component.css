@@ -5,7 +5,7 @@
     /* text-align: center; */
     margin:0 10%;
     width: 70%;
-    height:100%;
+    min-height:80vh;
 }
 .r1{
     margin-top: 10%;
@@ -123,6 +123,6 @@ p{
         border-radius: 30px;
         margin: 0 10%;
         width: 80%;
-        height:100%;
+        min-height: 70vh;
     }
 }
