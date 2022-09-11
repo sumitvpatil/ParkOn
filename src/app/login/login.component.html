@@ -12,7 +12,7 @@
             <p>{{message}}</p>
         </div>
         <form #logForm="ngForm" (ngSubmit)="onLogin()">
-            <input type="text" #uname="ngModel" required class="fields" placeholder="Email" pattern="^[a-z0-9.]+@[a-z]+\.[a-z]+.[a-z]+$" name="email" [(ngModel)]="loginData.email">
+            <input autocomplete="off" type="text" #uname="ngModel" required class="fields" placeholder="Email" pattern="^[a-z0-9.]+@[a-z]+\.[a-z]+.[a-z]+$" name="email" [(ngModel)]="loginData.email">
             <div *ngIf="uname.errors && (uname.invalid && uname.touched)">
                 <p *ngIf="uname.errors?.['pattern']">Invalid email</p>
                 <p *ngIf="uname.errors?.['required']">Email required</p>

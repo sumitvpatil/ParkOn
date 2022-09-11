@@ -46,7 +46,7 @@
     margin:0 auto;
     /* text-align: center; */
     color:white;
-    padding-bottom: 80px;
+    padding-bottom: 10px;
 }
 
 p{
@@ -153,8 +153,8 @@ input[type="text"]
     .search-box{
         /* background-color: white; */
         border:2px solid white;
-        width:80vw;
-        height:40vh;
+        width:85vw;
+        height:35vh;
         margin:10% auto;
         margin-bottom: 0;
         text-align: center;
@@ -163,11 +163,11 @@ input[type="text"]
     .res-box{
         /* background-color: white; */
         border:2px solid white;
-        width:80vw;
+        width:85vw;
         margin:0 auto;
         text-align: center;
         color:white;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
     .res-box p{
         width: 79vw;
