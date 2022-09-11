@@ -23,7 +23,7 @@
                 <p *ngIf="pass.errors?.['minlength']">Password must be atleast 6 characters</p>
                 <p *ngIf="pass.errors?.['required']">Password must be atleast 6 characters</p>
             </div>
-            <br>
+            <br><br><br>
             <button [disabled]="logForm.invalid" class="btn">LOGIN</button>
             <button class="btn0" routerLink="/register">Create account</button>
         </form>

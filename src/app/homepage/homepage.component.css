@@ -20,6 +20,12 @@
     float:right;
     /* border: 1px solid black; */
 }
+.loader-container{
+    position: fixed;
+    top:0;
+    background-color: red;
+    width: 100%;
+}
 
 @media(max-width:500px){
     .header{
