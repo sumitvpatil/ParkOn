@@ -154,7 +154,7 @@ input[type="text"]
         /* background-color: white; */
         border:2px solid white;
         width:85vw;
-        height:35vh;
+        min-height:35vh;
         margin:10% auto;
         margin-bottom: 0;
         text-align: center;
