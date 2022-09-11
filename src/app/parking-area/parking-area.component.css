@@ -94,6 +94,10 @@
     background-color: rgb(243, 114, 114);
 }
 
+#contact-number{
+    width:80px;
+}
+
 @media(max-width:500px){
     .header{
         margin-left:30px;

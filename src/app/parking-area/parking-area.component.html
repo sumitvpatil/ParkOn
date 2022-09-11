@@ -17,12 +17,12 @@
         <p>Address: {{area.pAddress}}</p>
         <p>City: {{area.pCity}}</p>
         <p>State: {{area.pState}}</p>
-        <p>Contact Number: <input #num="ngModel" class="number" name="num" type="text" [(ngModel)]="area.pNumber"></p>
-        <span>SLOT Details:</span>
+        <p>Contact Number: <input id="contact-number" #num="ngModel" class="number" name="num" type="text" [(ngModel)]="area.pNumber"></p>
+        <span>Total Slots:</span>
         <br><br>
         <p>Two Wheeler: <input #two_total="ngModel" class="number" name="two_total" type="text" [(ngModel)]="this.area.two_wheeler_total"></p>
         <p>Four Wheeler: <input #four_total class="number" name="four_total" type="text" [(ngModel)]="area.four_wheeler_total"></p>
-        <span>SLOT Availability Details:</span>
+        <span>Slots Filled:</span>
         <br><br>
         <p>Two Wheeler: <input #two_taken="ngModel" class="number" name="two_taken" type="text" [(ngModel)]="area.two_wheeler_taken"></p>
         <p>Four Wheeler: <input #four_taken="ngModel" class="number" name="four_taken" type="text" [(ngModel)]="area.four_wheeler_taken"></p>
